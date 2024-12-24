@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Info System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>User Info System</h1>
+
+    <!-- User Input Form -->
+    <div class="form-container">
+      <label for="username">Username:</label>
+      <input type="text" id="username" placeholder="Username">
+
+      <label for="usernumber">User Number:</label>
+      <input type="text" id="usernumber" placeholder="User Number">
+
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" placeholder="Phone Number">
+
+      <label for="company">Company:</label>
+      <input type="text" id="company" placeholder="Company">
+
+      <label for="unit">Unit:</label>
+      <input type="text" id="unit" placeholder="Unit">
+
+      <button onclick="saveData()">Save Info</button>
+    </div>
+
+    <!-- Search Box -->
+    <div class="search-container">
+      <input type="text" id="search" placeholder="Search..." onkeyup="searchUser()">
+      <div id="loading" class="loading">Loading...</div>
+    </div>
+
+    <!-- Table to display user information -->
+    <table id="userTable">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>User Number</th>
+          <th>Phone</th>
+          <th>Company</th>
+          <th>Unit</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="result"></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
