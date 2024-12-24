@@ -6,6 +6,15 @@ function saveData() {
   let company = document.getElementById('company').value;
   let unit = document.getElementById('unit').value;
 
+  // Check if the user number already exists
+  let users = JSON.parse(localStorage.getItem('users')) || [];
+  let isUserNumberExists = users.some(user => user.usernumber === usernumber);
+
+  if (isUserNumberExists) {
+    alert('This user number already exists. Please enter a unique number.');
+    return; // Exit the function if the user number already exists
+  }
+
   let user = {
     username,
     usernumber,
@@ -14,7 +23,6 @@ function saveData() {
     unit
   };
 
-  let users = JSON.parse(localStorage.getItem('users')) || [];
   users.push(user);
   localStorage.setItem('users', JSON.stringify(users));
 
